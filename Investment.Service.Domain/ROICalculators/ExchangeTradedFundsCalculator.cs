@@ -1,15 +1,9 @@
-﻿using Investment.Service.Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Investment.Service.Domain.ROICalculators
+﻿namespace Investment.Service.Domain.ROICalculators
 {
-    public class ExchangeTradedFundsCalculator : IROICalculator
+    public class ExchangeTradedFundsCalculator : SimpleCalculator
     {
-        public (decimal InvestmentReturn, decimal Fee) Calculate(decimal amount, decimal percentage)
-        {
-            throw new NotImplementedException();
-        }
+        // Requirement missing, set return rate to fixed 12.8%
+        public override decimal ReturnRate => 0.128m;
+        public override decimal FeeRate => 0.02m;
     }
 }

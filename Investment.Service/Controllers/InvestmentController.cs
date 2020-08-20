@@ -27,9 +27,9 @@ namespace Investment.Service.Controllers
         }
 
         [HttpPost("calculate")]
-        public InvestmentResult CalculateROI(List<InvestmentDetail> investmentDetails)
+        public InvestmentResult CalculateROI([FromBody] CalculateROIRequest request)
         {
-            return _investmentService.CalculateResult(investmentDetails);
+            return _investmentService.CalculateResult(request.InvestmentDetails);
         }
     }
 }
