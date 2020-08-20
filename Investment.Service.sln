@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Investment.Service", "Investment.Service\Investment.Service.csproj", "{F33B5049-696A-4794-92CB-1BFBD23C93A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Investment.Service", "Investment.Service\Investment.Service.csproj", "{F33B5049-696A-4794-92CB-1BFBD23C93A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Investment.Service.Domain", "Investment.Service.Domain\Investment.Service.Domain.csproj", "{532D6544-1491-4705-8A67-DE173358FC27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Investment.Service.Domain", "Investment.Service.Domain\Investment.Service.Domain.csproj", "{532D6544-1491-4705-8A67-DE173358FC27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Investment.Service.ExchangeRate.Repository", "Investment.Service.ExchangeRate.Repository\Investment.Service.ExchangeRate.Repository.csproj", "{4A80FC69-26B2-4738-912A-672F5D34AFA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Investment.Service.Tests", "Investment.Service.Tests\Investment.Service.Tests.csproj", "{1CCD30A3-3002-47FC-8534-8C008E787B2E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{532D6544-1491-4705-8A67-DE173358FC27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{532D6544-1491-4705-8A67-DE173358FC27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{532D6544-1491-4705-8A67-DE173358FC27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A80FC69-26B2-4738-912A-672F5D34AFA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A80FC69-26B2-4738-912A-672F5D34AFA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A80FC69-26B2-4738-912A-672F5D34AFA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A80FC69-26B2-4738-912A-672F5D34AFA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CCD30A3-3002-47FC-8534-8C008E787B2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CCD30A3-3002-47FC-8534-8C008E787B2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CCD30A3-3002-47FC-8534-8C008E787B2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CCD30A3-3002-47FC-8534-8C008E787B2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -14,10 +14,12 @@ namespace Investment.Service.Controllers
     public class InvestmentController
     {
         private readonly IInvestmentService _investmentService;
+        private readonly IExchangeRateService _exchangeRateService;
 
-        public InvestmentController(IInvestmentService investmentOptionService)
+        public InvestmentController(IInvestmentService investmentOptionService, IExchangeRateService exchangeRateService)
         {
             _investmentService = investmentOptionService;
+            _exchangeRateService = exchangeRateService;
         }
 
         [HttpGet("options")]
@@ -29,7 +31,14 @@ namespace Investment.Service.Controllers
         [HttpPost("calculate")]
         public InvestmentResult CalculateROI([FromBody] CalculateROIRequest request)
         {
-            return _investmentService.CalculateResult(request.InvestmentDetails);
+            var investmentResult = _investmentService.CalculateResult(request.InvestmentDetails);
+
+            var exchangedResult = new InvestmentResult
+            {
+                InvestmentReturn = _exchangeRateService.Exchange("AUD", "USD", investmentResult.InvestmentReturn),
+                Fees = _exchangeRateService.Exchange("AUD", "USD", investmentResult.Fees)
+            };
+            return exchangedResult;
         }
     }
 }

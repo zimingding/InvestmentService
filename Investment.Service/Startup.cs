@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Investment.Service.Domain.Interfaces;
 using Investment.Service.Domain.Services;
+using Investment.Service.ExchangeRate.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -28,8 +29,12 @@ namespace Investment.Service
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddHttpClient();
             services.AddControllers();
+            services.AddHttpClient<ExchangeRateRepository>();
             services.AddScoped<IInvestmentService, InvestmentService>();
+            services.AddScoped<IExchangeRateService, ExchangeRateService>();
+            services.AddScoped<IExchangeRateRepository, ExchangeRateRepository>();
             services.AddCors(options => 
             {
                 options.AddPolicy(name: MyAllowSpecificOrigins,
