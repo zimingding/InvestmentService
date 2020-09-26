@@ -5,6 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.6.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.6.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Investment.Service.Domain\Investment.Service.Domain.csproj" />
     <ProjectReference Include="..\Investment.Service.ExchangeRate.Repository\Investment.Service.ExchangeRate.Repository.csproj" />
   </ItemGroup>

@@ -31,6 +31,7 @@ namespace Investment.Service
         {
             services.AddHttpClient();
             services.AddControllers();
+            services.AddSwaggerGen();
             services.AddHttpClient<ExchangeRateRepository>();
             services.AddScoped<IInvestmentService, InvestmentService>();
             services.AddScoped<IExchangeRateService, ExchangeRateService>();
@@ -40,7 +41,7 @@ namespace Investment.Service
                 options.AddPolicy(name: MyAllowSpecificOrigins,
                             builder =>
                             {
-                                builder.WithOrigins("http://localhost:3000")
+                                builder.WithOrigins("http://raymondst.com:3000")
                                     .AllowAnyHeader();
                             });
             });
@@ -53,6 +54,13 @@ namespace Investment.Service
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Investment API V1");
+            });
 
             app.UseRouting();
 
